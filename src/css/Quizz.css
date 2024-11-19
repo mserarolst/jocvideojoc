@@ -1,0 +1,26 @@
+.quiz ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .quiz-answer {
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+    transition: background-color 0.3s ease;
+  }
+  
+  .quiz-answer:hover {
+    background-color: #e6e6e6;
+  }
+  
+  .score {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+  }
+  

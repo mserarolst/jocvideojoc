@@ -1,0 +1,17 @@
+.video-activity {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .video-activity iframe {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .video-activity p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #666;
+  }
+  
