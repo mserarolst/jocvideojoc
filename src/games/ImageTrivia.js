@@ -22,7 +22,7 @@ const ImageTrivia = ({ question, options, onGameEnd }) => {
   return (
     <div className="image-trivia">
       <p>{question}</p>
-      <div className="imagetrivia"  style={{ display: 'flex', justifyContent: 'space-around', cursor: 'pointer' }}>
+      <div className="imagetrivia"  style={{ display: window.innerWidth < 900 ? 'block' : 'flex', justifyContent: 'space-around', cursor: 'pointer' }}>
         {options.map((option, index) => (
           <div
             key={index}

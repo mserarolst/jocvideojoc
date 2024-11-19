@@ -114,9 +114,9 @@ export const screensData = [
 
       <TimelinePuzzle
         events={[
-          { id: "1", title: "Pong (1972)" },
-          { id: "2", title: "Super Mario Bros (1985)" },
-          { id: "3", title: "The Legend of Zelda (1986)" },
+          { id: "3", title: "The Legend of Zelda" },
+          { id: "2", title: "Super Mario Bros" },
+          { id: "1", title: "Pong" },
         ]}
       />
       

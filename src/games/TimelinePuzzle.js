@@ -1,31 +1,27 @@
-import React, { useEffect, useState } from "react";
-
+import React, { useState, useEffect } from "react";
+import '../css/TimelinePuzzle.css';
 const TimelinePuzzle = ({ events, onGameEnd }) => {
   const [userOrder, setUserOrder] = useState(events.map((e) => e.id));
+  const [selectedIndex, setSelectedIndex] = useState(null);
   const [isCorrect, setIsCorrect] = useState(null);
 
   useEffect(() => {
-    if (onGameEnd && isCorrect) {
-      onGameEnd(isCorrect ? 10 : 0, isCorrect ? true : false); // 10 punts per correcte, 0 per incorrecte
+    if (onGameEnd && isCorrect !== null) {
+      onGameEnd(isCorrect ? 10 : 0, isCorrect);
     }
-  }, [isCorrect])
+  }, [isCorrect, onGameEnd]);
 
-  const handleDragStart = (event, id) => {
-    event.dataTransfer.setData("text/plain", id);
-  };
-
-  const handleDrop = (event, targetId) => {
-    event.preventDefault();
-    const draggedId = event.dataTransfer.getData("text/plain");
-
-    const newOrder = [...userOrder];
-    const draggedIndex = newOrder.indexOf(draggedId);
-    const targetIndex = newOrder.indexOf(targetId);
-
-    newOrder.splice(draggedIndex, 1);
-    newOrder.splice(targetIndex, 0, draggedId);
-
-    setUserOrder(newOrder);
+  // Gestiona la selecció d'un element
+  const handleItemClick = (index) => {
+    if (selectedIndex === null) {
+      setSelectedIndex(index); // Selecciona el primer element
+    } else {
+      // Intercanvia els elements seleccionats
+      const newOrder = [...userOrder];
+      [newOrder[selectedIndex], newOrder[index]] = [newOrder[index], newOrder[selectedIndex]];
+      setUserOrder(newOrder);
+      setSelectedIndex(null); // Desselecciona després de l'intercanvi
+    }
   };
 
   const handleCheck = () => {
@@ -35,18 +31,17 @@ const TimelinePuzzle = ({ events, onGameEnd }) => {
 
   return (
     <div>
-      <h3>Ordena cronològicament els esdeveniments:</h3>
+      <h3>Ordena de mes antic a més modern (de dalt a baix):</h3>
       <ul>
-        {userOrder.map((id) => {
+        {userOrder.map((id, index) => {
           const event = events.find((e) => e.id === id);
           return (
             <li
               key={id}
-              draggable
-              onDragStart={(e) => handleDragStart(e, id)}
-              onDragOver={(e) => e.preventDefault()}
-              onDrop={(e) => handleDrop(e, id)}
-              className="draggable-item"
+              onClick={() => handleItemClick(index)}
+              className={`puzzle-item ${
+                selectedIndex === index ? "selected" : ""
+              }`}
             >
               {event.title}
             </li>

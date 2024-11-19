@@ -1,18 +1,28 @@
-.draggable-item {
-    cursor: grab;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    transition: background-color 0.3s ease;
-  }
-  
-  .draggable-item:hover {
-    background-color: #e6e6e6;
-  }
-  
-  .draggable-item:active {
-    cursor: grabbing;
-  }
-  
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.puzzle-item {
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.puzzle-item:hover {
+  background-color: #f0f0f0;
+}
+
+.puzzle-item.selected {
+  background-color: #007bff;
+  color: white;
+  transform: scale(1.05);
+}

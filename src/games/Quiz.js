@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import '../css/Quizz.css';
 const Quiz = ({ questions, onGameEnd }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
