@@ -4,12 +4,6 @@ const GameIntroduction = ({ onStart }) => {
   return (
     <div className="game-introduction">
       <h1>Benvingut al Joc de Remediació!</h1>
-      <p>
-        Explora el fascinant món dels videojocs mentre aprens sobre la seva evolució
-        i transformació en la cultura digital. Cada pantalla inclou una petita
-        explicació i un repte divertit. Guanya punts pel teu rendiment i competeix
-        amb tu mateix!
-      </p>
       <h2>Com funciona:</h2>
       <ul>
         <li>Llegeix la introducció de cada pantalla per entendre el context.</li>

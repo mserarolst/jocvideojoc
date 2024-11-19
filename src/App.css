@@ -1,48 +1,165 @@
+/* Estil general */
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
+  font-family: "Press Start 2P", cursive; /* Tipografia retro/gamer */
+  background-color: #1a1a2e;
+  color: #303134;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+    background: linear-gradient(135deg, #1a1a2e, #0f3460, #16213e);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    color: #303134;
 }
 
-#root {
+
+.App {
+  height: 100vh;
   display: flex;
   align-items: center;
+  width: 100vw;
   justify-content: center;
-  height: 100vh;
+}
+
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 h1, h2, h3 {
-  color: #007bff;
-  margin: 0;
+  color: #f72585;
+  text-shadow: 2px 2px 4px #000;
 }
 
-ul {
-  padding: 0;
-  list-style: none;
+p {
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
+/* Botons estilitzats */
 button {
-  cursor: pointer;
+  background: linear-gradient(90deg, #f72585, #7209b7);
+  color: white;
+  font-family: "Press Start 2P", cursive;
+  padding: 12px 25px;
   border: none;
-  padding: 10px 15px;
-  font-size: 16px;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1rem;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #f72585, 0 0 30px #7209b7;
+}
+
+button:active {
+  transform: scale(0.95);
 }
 
 
-.progress-bar {
-  width: 100%;
-  background-color: #ddd;
-  border-radius: 5px;
+/* Llistes d'elements */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
   margin: 10px 0;
+  padding: 15px 20px;
+  background: linear-gradient(90deg, #14213d, #333);
+  border: 2px solid #f72585;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
-.progress-bar-fill {
-  height: 10px;
-  background-color: #007bff;
-  border-radius: 5px;
-  transition: width 0.3s ease;
+li:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(90deg, #7209b7, #3a0ca3);
+}
+
+/* Element seleccionat */
+li.selected {
+  border-color: #ffba08;
+  background: linear-gradient(90deg, #3a0ca3, #f72585);
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #f72585, 0 0 30px #ffba08;
+}
+
+/* Missatges */
+p {
+  font-size: 1.2rem;
+  margin: 20px 0;
+}
+
+/* Contenidor principal */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Títols */
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #f72585;
+  text-shadow: 2px 2px 4px #000;
+  animation: textGlow 2s ease-in-out infinite;
+}
+
+@keyframes textGlow {
+  0%,
+  100% {
+    text-shadow: 2px 2px 4px #000, 0 0 10px #f72585, 0 0 20px #7209b7;
+  }
+  50% {
+    text-shadow: 2px 2px 4px #000, 0 0 20px #ffba08, 0 0 40px #ffba08;
+  }
+}
+
+
+@media (max-width: 768px) {
+  body {
+    font-size: 0.9rem; /* Redueix lleugerament la mida del text */
+    padding: 10px;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.2rem; /* Redueix la mida dels títols */
+  }
+
+  ul {
+    gap: 10px; /* Redueix la separació entre elements de la llista */
+  }
+
+  .puzzle-item {
+    padding: 10px 15px;
+    font-size: 1rem; /* Redueix la mida del text dins els elements */
+  }
+
+  button {
+    font-size: 0.9rem; /* Redueix lleugerament la mida del botó */
+    padding: 8px 20px; /* Ajusta la mida del botó */
+  }
 }

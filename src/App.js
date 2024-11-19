@@ -32,8 +32,8 @@ function App() {
       ) : (
         <div className="game-screen">
           <h1>Felicitats! Has completat el joc 🎉</h1>
-          <h3>Has completat el viatge pels videojocs i la seva evolució. Com has vist, la remediació i la transcodificació no només transformen els jocs, sinó també la manera en què ens relacionem amb el món digital.</h3>
-          <p>Puntuació final: {score} de {total}</p>
+          <p>Has completat el viatge pels videojocs i la seva evolució. Com has vist, la remediació i la transcodificació no només transformen els jocs, sinó també la manera en què ens relacionem amb el món digital.</p>
+          <h3>Puntuació final: {score} de {total}</h3>
         </div>
       )}
     </div>

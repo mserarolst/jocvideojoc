@@ -8,21 +8,29 @@ ul {
 }
 
 .puzzle-item {
-  padding: 10px 20px;
-  border: 1px solid #ddd;
+  padding: 15px 25px;
+  margin: 10px 0;
+  background: linear-gradient(90deg, #14213d, #333);
+  border: 2px solid #f72585;
   border-radius: 5px;
-  background-color: #f9f9f9;
-  cursor: pointer;
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  font-family: "Press Start 2P", cursive;
   text-align: center;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
 .puzzle-item:hover {
-  background-color: #f0f0f0;
+  transform: translateY(-3px);
+  background: linear-gradient(90deg, #7209b7, #3a0ca3);
 }
 
 .puzzle-item.selected {
-  background-color: #007bff;
-  color: white;
+  background: linear-gradient(90deg, #3a0ca3, #f72585);
+  color: #fff;
+  border-color: #ffba08;
   transform: scale(1.05);
+  box-shadow: 0 0 15px #f72585, 0 0 30px #ffba08;
 }
+

@@ -1,5 +1,6 @@
 .score-board {
-    background-color: #007bff;
+    
+   background: linear-gradient(90deg, #7209b7, #3a0ca3);
     color: white;
     padding: 10px 20px;
     text-align: center;
