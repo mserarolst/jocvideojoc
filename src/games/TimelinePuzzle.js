@@ -1,9 +1,25 @@
 import React, { useState, useEffect } from "react";
-import '../css/TimelinePuzzle.css';
+import "../css/TimelinePuzzle.css";
+
 const TimelinePuzzle = ({ events, onGameEnd }) => {
-  const [userOrder, setUserOrder] = useState(events.map((e) => e.id));
+  // Funció per barrejar l'ordre dels esdeveniments
+  const shuffleArray = (array) => {
+    return array
+      .map((item) => ({ ...item, sort: Math.random() }))
+      .sort((a, b) => a.sort - b.sort)
+      .map(({ sort, ...item }) => item);
+  };
+
+  // Estat per guardar l'ordre actual de l'usuari
+  const [userOrder, setUserOrder] = useState([]);
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [isCorrect, setIsCorrect] = useState(null);
+
+  useEffect(() => {
+    // Desordena els esdeveniments al carregar el component
+    const shuffledEvents = shuffleArray(events);
+    setUserOrder(shuffledEvents.map((e) => e.id)); // Inicialitza l'ordre aleatori
+  }, [events]);
 
   useEffect(() => {
     if (onGameEnd && isCorrect !== null) {
@@ -31,7 +47,7 @@ const TimelinePuzzle = ({ events, onGameEnd }) => {
 
   return (
     <div>
-      <h3>Ordena de mes antic a més modern (de dalt a baix):</h3>
+      <h3>Ordena de més antic a més modern (de dalt a baix):</h3>
       <ul>
         {userOrder.map((id, index) => {
           const event = events.find((e) => e.id === id);
