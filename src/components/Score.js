@@ -8,7 +8,7 @@ const Score = ({ score, isCorrect }) => {
   }, [isCorrect])
   return (
     <div className="score-board">
-      {isCorrect != null ? (isCorrect ? <p>Has encertat la resposta! +10 punts </p> : <p>{"Resposta incorrecta :("}</p>) : <></>}
+      {isCorrect != null ? (isCorrect ? <p style={{margin: '5px 0'}}>Has encertat la resposta! +10 punts </p> : <p style={{margin: '5px 0'}}>{"Resposta incorrecta :("}</p>) : <></>}
       <h3 style={{color: 'white'}}>Punts acumulats: {score}</h3>
     </div>
   );

@@ -62,8 +62,6 @@ const MatchTheConcept = ({ pairs, onGameEnd }) => {
 
   return (
     <div className="match-the-concept">
-      <h2>Relaciona els conceptes</h2>
-      <p>Relaciona les imatges dels jocs clàssics amb els seus equivalents moderns.</p>
       <div className="columns">
         <div className="column">
           <h3>Del passat</h3>

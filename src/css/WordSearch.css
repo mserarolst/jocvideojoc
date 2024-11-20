@@ -1,0 +1,94 @@
+.word-search {
+    text-align: center;
+    color: #eaeaea;
+    font-family: "Press Start 2P", cursive;
+    margin: 20px auto;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px auto;
+    max-width: 100%; /* Evita desbordament horitzontal */
+    overflow-x: auto; /* Activa scroll si la graella desborda */
+  }
+  
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(10, 40px); /* 10 columnes de 40px cadascuna */
+    grid-template-rows: repeat(10, 40px); /* 6 files de 40px cadascuna */
+    gap: 5px; /* Espai entre cel·les */
+    justify-content: center; /* Centra la graella */
+  }
+  
+  .cell {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1e293b;
+    border: 2px solid #4cc9f0;
+    font-size: 1.2rem;
+    color: #e2e8f0;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  
+  .cell.selected {
+    background-color: #ff3366;
+    color: #fff;
+  }
+  
+  .cell:hover {
+    background-color: #4cc9f0;
+    color: #1e293b;
+  }
+  
+  .words {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+  
+  .word {
+    list-style: none;
+    font-size: 1rem;
+    color: #fff;
+    margin: 10px 0;
+    text-align: left;
+  }
+  
+  .word.found {
+    text-decoration: line-through;
+    color: #4cc9f0;
+  }
+  
+  .message {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #4cc9f0;
+  }
+  
+  .check-button {
+    background-color: #ff3366;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .check-button:hover {
+    background-color: #7209b7;
+  }
+  

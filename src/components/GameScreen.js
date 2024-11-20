@@ -1,6 +1,6 @@
 import React from "react";
 import '../css/GameScreen.css';
-const GameScreen = ({ screenData, onNextScreen }) => {
+const GameScreen = ({ screenData, onNextScreen, isCorrect }) => {
   const handleGameEnd = (points, isCorrect) => {
     onNextScreen(points, isCorrect); // Passa els punts al component pare
   };
@@ -10,7 +10,7 @@ const GameScreen = ({ screenData, onNextScreen }) => {
         <h2>{screenData.title}</h2>
         <p>{screenData.description}</p>
         <div className="game">
-          {React.cloneElement(screenData.screen, { onGameEnd: handleGameEnd })}
+          {React.cloneElement(screenData.screen, { onGameEnd: handleGameEnd, isCorrect: isCorrect })}
 
         </div>
       </div>

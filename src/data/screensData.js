@@ -15,35 +15,26 @@ import imageColonies from '../assets/colonies.jpg';
 import imageAmongus from '../assets/amongus.webp';
 import imageMono from '../assets/monopoly.webp';
 import imageMonoApp from '../assets/monopolyapp.webp';
-
+import Resposta from "../components/Resposta";
+import imagePong from '../assets/pong.webp';
+import imageZelda2 from '../assets/zelda2.jpg'
+import IntroScreen from "../components/IntroScreen";
+import WordSearch from "../games/WordSearch";
 export const screensData = [
+  // {
+  //   screen: (
+  //     <Screen
+  //       title="Introducció: Remediació i transcodificació"
+  //       content="La remediació i la transcodificació són conceptes claus per entendre com el programari ha canviat la nostra manera de jugar. Aquest joc interactiu et portarà per la història dels videojocs, explorant com s'han remediat i transcodificat les experiències lúdiques."
+  //     />
+  //   ),
+  // },
+
   {
     screen: (
-      <Screen
+      <IntroScreen
         title="Introducció: Remediació i transcodificació"
-        content="La remediació i la transcodificació són conceptes claus per entendre com el programari ha canviat la nostra manera de jugar. Aquest joc interactiu et portarà per la història dels videojocs, des dels jocs físics fins a la realitat virtual, explorant com s'han remediat i transcodificat les experiències lúdiques."
-      />
-    ),
-  },
-  {
-    title: "Els primers jocs: dels taulers a les pantalles",
-    description: "Jugar a escacs o al Monopoly eren activitats comunes als anys 50. Amb la digitalització, aquests jocs es van remediar, passant de ser físics a digitals, adaptant-se al programari.",
-    screen: (
-      <Riddle
-        question= "Quin d’aquests jocs es va digitalitzar primer?"
-        options={[
-          { text: "Parxís", isCorrect: false },
-          { text: "Monopoly", isCorrect: true },
-          { text: "Risk", isCorrect: false },
-        ]}
-      />
-    ),
-  },
-  {
-    screen: (
-      <Screen
-        title="L'era de les arcades"
-        content="Als anys 70, les màquines recreatives van introduir videojocs com Pong. Aquest va ser un clar exemple de transcodificació: una experiència de joc totalment nova i digital."
+        content="La remediació i la transcodificació són conceptes claus per entendre com el programari ha canviat la nostra manera de jugar. Aquest joc interactiu et portarà per la història dels videojocs, explorant com s'han remediat i transcodificat les experiències lúdiques."
       />
     ),
   },
@@ -77,9 +68,9 @@ export const screensData = [
   },
   {
     screen: (
-      <Screen
-        title="Els jocs en 2D: una nova era"
-        content="Super Mario Bros va marcar un abans i un després en la història dels videojocs, introduint personatges i gràfics 2D que remediaven formes d'entreteniment com els còmics."
+      <Resposta
+        content="Als anys 70, les màquines recreatives van introduir videojocs com Pong. Aquest va ser un clar exemple de transcodificació: una experiència de joc totalment nova i digital."
+        image={imagePong}
       />
     ),
   },
@@ -101,14 +92,13 @@ export const screensData = [
   },
   {
     screen: (
-      <Screen
-        title="Posa ordre als videojocs"
-        content="Quins van ser els jocs més importants de la història? Ordena’ls per data de llançament per descobrir com han evolucionat."
+      <Resposta
+        content="La premissa del joc (rescatar la Princesa Peach) remeda els contes clàssics de cavallers i princeses. Això adapta les estructures narratives tradicionals a un nou mitjà interactiu."
       />
     ),
   },  
   {
-    title:"Posa ordre als videojocs",
+    title:"Alguns dels jocs més importants de la història",
     description:"Quins van ser els jocs més importants de la història? Ordena’ls per data de llançament per descobrir com han evolucionat.",
     screen: (
 
@@ -124,14 +114,15 @@ export const screensData = [
   },
   {
     screen: (
-      <Screen
-        title="Relaciona els conceptes"
-        content="Molts jocs tradicionals han evolucionat gràcies a la digitalització. Relaciona els jocs clàssics amb les seves versions modernes per entendre millor aquest procés."
+      <Resposta
+        content="Els videojocs han remeditat contes, llibres, còmics i pel·lícules per convertir-los en experiències interactives.
+Per exemple, The Legend of Zelda remeda aventures èpiques clàssiques i contes medievals, convertint el jugador en el protagonista de la història."
+      video={<iframe width="400" height="200" src="https://www.youtube.com/embed/ofH5ptn5w-A" title="The Legend of Zelda: Breath of the Wild - Tráiler de Nintendo Switch" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>}
       />
     ),
   },
   {
-    title: "Relaciona els conceptes",
+    title: "Dels jocs físics als digitals",
     description: "Molts jocs tradicionals han evolucionat gràcies a la digitalització. Relaciona els jocs clàssics amb les seves versions modernes per entendre millor aquest procés.",
     screen: (
       <MatchTheConcept
@@ -154,6 +145,20 @@ export const screensData = [
         },
       ]}
     />
+    ),
+  },
+  {
+    screen: (
+      <Resposta
+      content="Jugar a escacs o al Monopoly eren activitats comunes als anys 50. Amb la digitalització, aquests jocs es van remediar, passant de ser físics a digitals, adaptant-se al programari."
+      />
+    ),
+  },
+  {
+    screen: (
+
+      <WordSearch/>
+      
     ),
   },
 ];

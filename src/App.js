@@ -27,6 +27,7 @@ function App() {
           <GameScreen
             screenData={screensData[currentScreen]}
             onNextScreen={handleNextScreen}
+            isCorrect={isCorrect}
           />
         </>
       ) : (
